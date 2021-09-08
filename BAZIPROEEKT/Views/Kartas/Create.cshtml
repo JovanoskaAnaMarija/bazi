@@ -1,0 +1,102 @@
+﻿@model BAZIPROEEKT.Models.Karta
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2   style="color: burlywood;font-size: 20px;">Додади карта:</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4  style="color: cadetblue">Карта</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <p style="color:burlywood">
+            @Html.LabelFor(model => model.datum_na_izdavanje, htmlAttributes: new { @class = "control-label col-md-2" })
+                </p>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.datum_na_izdavanje, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.datum_na_izdavanje, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <p style="color:burlywood">
+                @Html.LabelFor(model => model.id_klient, htmlAttributes: new { @class = "control-label col-md-2" })
+                </p>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.id_klient, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.id_klient, "", new { @class = "text-danger" })
+                </div>
+        </div>
+
+        <div class="form-group">
+            <p style="color:burlywood">
+                @Html.LabelFor(model => model.id_let, htmlAttributes: new { @class = "control-label col-md-2" })
+                </p>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.id_let, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.id_let, "", new { @class = "text-danger" })
+                </div>
+        </div>
+
+        <div class="form-group">
+            <p style="color:burlywood">
+                @Html.LabelFor(model => model.destinacija_od, htmlAttributes: new { @class = "control-label col-md-2" })
+                </p>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.destinacija_od, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.destinacija_od, "", new { @class = "text-danger" })
+                </div>
+        </div>
+
+        <div class="form-group">
+            <p style="color:burlywood">
+                @Html.LabelFor(model => model.destinacija_do, htmlAttributes: new { @class = "control-label col-md-2" })
+                </p>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.destinacija_do, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.destinacija_do, "", new { @class = "text-danger" })
+                </div>
+        </div>
+
+        <div class="form-group">
+            <p style="color:burlywood">
+                @Html.LabelFor(model => model.vreme_na_poaganje, htmlAttributes: new { @class = "control-label col-md-2" })
+                </p>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.vreme_na_poaganje, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.vreme_na_poaganje, "", new { @class = "text-danger" })
+                </div>
+        </div>
+
+        <div class="form-group">
+            <p style="color:burlywood">
+                @Html.LabelFor(model => model.cena, htmlAttributes: new { @class = "control-label col-md-2" })
+                </p>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.cena, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.cena, "", new { @class = "text-danger" })
+                </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

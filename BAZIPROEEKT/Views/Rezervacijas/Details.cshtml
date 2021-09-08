@@ -1,0 +1,54 @@
+﻿@model BAZIPROEEKT.Models.Rezervacija
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2   style="color:  burlywood">Детали:</h2>
+
+<div>
+    <h4 style="color:cadetblue">Резервација</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <p style="color: burlywood">
+                @Html.DisplayNameFor(model => model.vreme_na_rezervacija)
+                </p>
+        </dt>
+
+        <dd>
+            <p style="color:  cadetblue">
+                @Html.DisplayFor(model => model.vreme_na_rezervacija)
+                </p>
+        </dd>
+
+        <dt>
+            <p style="color: burlywood">
+                @Html.DisplayNameFor(model => model.id_klient)
+                </p>
+        </dt>
+
+        <dd>
+            <p style="color:  cadetblue">
+                @Html.DisplayFor(model => model.id_klient)
+                </p>
+        </dd>
+
+        <dt>
+            <p style="color: burlywood">
+                @Html.DisplayNameFor(model => model.id_avio)
+                </p>
+        </dt>
+
+        <dd>
+            <p style="color:  cadetblue">
+                @Html.DisplayFor(model => model.id_avio)
+                </p>
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id_rezervacija }) 
+    @Html.ActionLink("Back to List", "Index")
+</p>

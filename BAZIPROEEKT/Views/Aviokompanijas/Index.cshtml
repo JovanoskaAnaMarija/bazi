@@ -1,0 +1,51 @@
+﻿@model IEnumerable<BAZIPROEEKT.Models.Aviokompanija>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 style="color: burlywood;font-size:30px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">Авиокомпании</h2>
+@if(User.Identity.IsAuthenticated)
+{ 
+<p>
+    <button class="btn btn-info" > @Html.ActionLink("+Додади", "Create", new {style="color:white" })</button>
+</p>
+}
+<table class="table">
+    <tr>
+        <th>
+            <p style="color: burlywood">
+                @Html.DisplayNameFor(model => model.ime)
+            </p>
+        </th>
+        <th>
+            <p style="color: burlywood">
+                @Html.DisplayNameFor(model => model.drzava)
+                </p>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <p style="color:  cadetblue">
+                @Html.DisplayFor(modelItem => item.ime)
+                </p>
+        </td>
+        <td>
+            <p style="color: cadetblue">
+                @Html.DisplayFor(modelItem => item.drzava)
+                </p>
+</td>
+        <td>
+            <p style="color: cadetblue">
+                @Html.ActionLink("Edit", "Edit", new { id = item.id_avio })
+                @Html.ActionLink("Details", "Details", new { id = item.id_avio })
+                @Html.ActionLink("Delete", "Delete", new { id = item.id_avio })
+                </p>
+        </td>
+    </tr>
+}
+
+</table>

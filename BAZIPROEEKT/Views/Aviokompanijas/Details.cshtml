@@ -1,0 +1,46 @@
+﻿@model BAZIPROEEKT.Models.Aviokompanija
+
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 style="color:burlywood">Детали за:</h2>
+
+<div>
+    <h4 style="color:cadetblue">@Model.ime</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <p style="color: burlywood">
+                @Html.DisplayNameFor(model => model.ime)
+            </p>
+        </dt>
+
+        <dd>
+            <p style="color: burlywood">
+                @Html.DisplayFor(model => model.ime)
+            </p>
+        </dd>
+
+        <dt>
+            <p style="color: burlywood">
+                @Html.DisplayNameFor(model => model.drzava)
+            </p>
+        </dt>
+
+        <dd>
+            <p style="color: burlywood">
+                @Html.DisplayFor(model => model.drzava)
+            </p>
+        </dd>
+
+
+
+    </dl>
+</div>
+<p>
+<p style="color: cadetblue">
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id_avio })
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,163 @@
+﻿@model IEnumerable<BAZIPROEEKT.Models.Let>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 style="color: burlywood;font-size:30px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">Летови</h2>
+@if(User.Identity.IsAuthenticated)
+{ 
+<p>
+    <button class="btn btn-info" > @Html.ActionLink("+Додади", "Create", new {style="color:white" })</button>
+</p>
+}
+<table class="table">
+    <tr>
+        <th>
+            <p style="color: burlywood">
+                @Html.DisplayNameFor(model => model.destinacija_od)
+            </p>
+        </th>
+        <th>
+            <p style="color: burlywood">
+                @Html.DisplayNameFor(model => model.destinacija_do)
+            </p>
+        </th>
+        <th>
+            <p style="color: burlywood">
+                @Html.DisplayNameFor(model => model.datum)
+            </p>
+        </th>
+        <th>
+            <p style="color: burlywood">
+                @Html.DisplayNameFor(model => model.cena)
+            </p>
+        </th>
+        <th>
+            <p style="color: burlywood">
+                @Html.DisplayNameFor(model => model.id_avio)
+            </p>
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <p style="color:  cadetblue">
+                    @Html.DisplayFor(modelItem => item.destinacija_od)
+                </p>
+            </td>
+            <td>
+                <p style="color:  cadetblue">
+                    @Html.DisplayFor(modelItem => item.destinacija_do)
+                </p>
+            </td>
+            <td>
+                <p style="color:  cadetblue">
+                    @Html.DisplayFor(modelItem => item.datum)
+                </p>
+            </td>
+            <td>
+                <p style="color:  cadetblue">
+                    @Html.DisplayFor(modelItem => item.cena)
+                </p>
+            </td>
+            <td>
+                <p style="color:  cadetblue">
+                    @Html.DisplayFor(modelItem => item.id_avio)
+                </p>
+            </td>
+            <td>
+                <p style="color: cadetblue">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.id_let })
+                    @Html.ActionLink("Details", "Details", new { id = item.id_let })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.id_let })
+                  
+                </p>
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+<div class="container" style="margin-left:-20px;">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="card" style="width: 18rem;">
+                <img src="~/Images/los.jpg" class="card-img-top" alt="..." style="height:210px; width:380px; margin-top: 20px; margin-right:10px;">
+                <div class="card-body">
+                    <h5 class="card-title" style="font-weight-bold;color: coral; font-size:18px;">Париз-Лос Анџелес</h5>
+                    <p class="card-text">Round-trip: Apr 28 - May 12 (14 days)</p>
+                    <a href="#" class="btn btn-warning">Search</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-lg-6">
+            <div class="card" style="width: 18rem;">
+                <img src="~/Images/dub.jpg" class="card-img-top" alt="..." style="height:210px; width:380px; margin-top: 20px;">
+                <div class="card-body">
+                    <h5 class="card-title" style="font-weight-bold;color: coral; font-size:18px;">Даблин-Сиднеј</h5>
+                    <p class="card-text">Round-trip: May 5 - May 12 (7 days)</p>
+                    <a href="#" class="btn btn-warning">Search</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="card" style="width: 18rem;">
+                <img src="~/Images/hon.jpg" class="card-img-top" alt="..." style="height:210px; width:380px; margin-top: 10px;">
+                <div class="card-body">
+                    <h5 class="card-title" style="font-weight-bold;color: coral; font-size:18px;">Хон Конг-Њу Јорк</h5>
+                    <p class="card-text">Round-trip: Dec 30 - Jan 13 (14 days)</p>
+                    <a href="#" class="btn btn-warning">Search</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="card" style="width: 18rem;">
+                <img src="~/Images/ist.jpg" class="card-img-top" alt="..." style="height:210px; width:380px; margin-top: 10px;">
+                <div class="card-body">
+                    <h5 class="card-title" style="font-weight-bold;color: coral; font-size:18px;">Скопје-Истанбул</h5>
+                    <p class="card-text">Round-trip: Dec 25 - Jan 15 (21 days)</p>
+                    <a href="#" class="btn btn-warning">Search</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="card" style="width: 18rem;">
+                <img src="~/Images/par.jpeg" class="card-img-top" alt="..." style="height:210px; width:380px; margin-top: 10px;">
+                <div class="card-body">
+                    <h5 class="card-title" style="font-weight-bold;color: coral; font-size:18px;">Скопје-Париз</h5>
+                    <p class="card-text">Round-trip: Dec 30 - Jan 13 (14 days)</p>
+                    <a href="#" class="btn btn-warning">Search</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="card" style="width: 18rem;">
+                <img src="~/Images/tor.jpg" class="card-img-top" alt="..." style="height:210px; width:380px; margin-top: 10px;">
+                <div class="card-body">
+                    <h5 class="card-title" style="font-weight-bold;color: coral; font-size:18px;">Скопје-Торонто</h5>
+                    <p class="card-text">Round-trip: Apr 19 - Apr 29 (10 days) </p>
+                    <a href="#" class="btn btn-warning">Search</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+

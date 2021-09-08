@@ -1,0 +1,64 @@
+﻿@model BAZIPROEEKT.Models.Rezervacija
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2   style="color: burlywood">Измени:</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4 style="color: cadetblue">Резервација</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.id_rezervacija)
+
+        <div class="form-group">
+            <p style="color: burlywood">
+                @Html.LabelFor(model => model.vreme_na_rezervacija, htmlAttributes: new { @class = "control-label col-md-2" })
+                </p>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.vreme_na_rezervacija, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.vreme_na_rezervacija, "", new { @class = "text-danger" })
+                </div>
+        </div>
+
+        <div class="form-group">
+            <p style="color: burlywood">
+                @Html.LabelFor(model => model.id_klient, htmlAttributes: new { @class = "control-label col-md-2" })
+                </p>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.id_klient, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.id_klient, "", new { @class = "text-danger" })
+                </div>
+        </div>
+
+        <div class="form-group">
+            <p style="color: burlywood">
+                @Html.LabelFor(model => model.id_avio, htmlAttributes: new { @class = "control-label col-md-2" })
+                </p>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.id_avio, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.id_avio, "", new { @class = "text-danger" })
+                </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,64 @@
+﻿@model BAZIPROEEKT.Models.Klient
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 style="color:burlywood">Детали за:</h2>
+
+<div>
+    <h4 style="color:cadetblue">Клиент</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <p style="color: burlywood">
+                @Html.DisplayNameFor(model => model.ime)
+                </p>
+        </dt>
+
+        <dd>
+            <p style="color: cadetblue">
+                @Html.DisplayFor(model => model.ime)
+                </p>
+        </dd>
+
+        <dt>
+            <p style="color: burlywood">
+                @Html.DisplayNameFor(model => model.username)
+                </p>
+        </dt>
+
+        <dd>
+            <p style="color: cadetblue">
+                @Html.DisplayFor(model => model.username)
+                </p>
+        </dd>
+
+        <dt>
+            <p style="color: burlywood">
+                @Html.DisplayNameFor(model => model.password)
+                </p>
+        </dt>
+
+        <dd>
+            <p style="color: cadetblue">
+                @Html.DisplayFor(model => model.password)
+                </p>
+        </dd>
+
+        <dt>
+            <p style="color: burlywood">
+                @Html.DisplayNameFor(model => model.email)
+                </p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id_klient }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

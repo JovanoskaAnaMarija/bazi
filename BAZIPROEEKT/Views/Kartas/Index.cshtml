@@ -1,0 +1,101 @@
+﻿@model IEnumerable<BAZIPROEEKT.Models.Karta>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 style="color: burlywood;font-size:30px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">Карти</h2>
+<p>
+    <button class="btn btn-info"> @Html.ActionLink("+Додади", "Create", new { style = "color:white" })</button>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <p style="color: burlywood">
+                @Html.DisplayNameFor(model => model.datum_na_izdavanje)
+                </p>
+        </th>
+        <th>
+            <p style="color: burlywood">
+                @Html.DisplayNameFor(model => model.id_klient)
+                </p>
+        </th>
+        <th>
+            <p style="color: burlywood">
+                @Html.DisplayNameFor(model => model.id_let)
+                </p>
+        </th>
+        <th>
+            <p style="color: burlywood">
+                @Html.DisplayNameFor(model => model.destinacija_od)
+                </p>
+        </th>
+        <th>
+            <p style="color: burlywood">
+                @Html.DisplayNameFor(model => model.destinacija_do)
+                </p>
+        </th>
+        <th>
+            <p style="color: burlywood">
+                @Html.DisplayNameFor(model => model.vreme_na_poaganje)
+                </p>
+        </th>
+        <th>
+            <p style="color: burlywood">
+                @Html.DisplayNameFor(model => model.cena)
+                </p>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <p style="color:  cadetblue">
+                @Html.DisplayFor(modelItem => item.datum_na_izdavanje)
+                </p>
+        </td>
+        <td>
+            <p style="color:  cadetblue">
+                @Html.DisplayFor(modelItem => item.id_klient)
+                </p>
+        </td>
+        <td>
+            <p style="color:  cadetblue">
+                @Html.DisplayFor(modelItem => item.id_let)
+                </p>
+        </td>
+        <td>
+            <p style="color:  cadetblue">
+                @Html.DisplayFor(modelItem => item.destinacija_od)
+                </p>
+        </td>
+        <td>
+            <p style="color:  cadetblue">
+                @Html.DisplayFor(modelItem => item.destinacija_do)
+                </p>
+        </td>
+        <td>
+            <p style="color:  cadetblue">
+                @Html.DisplayFor(modelItem => item.vreme_na_poaganje)
+                </p>
+        </td>
+        <td>
+            <p style="color:  cadetblue">
+                @Html.DisplayFor(modelItem => item.cena)
+                </p>
+        </td>
+        <td>
+
+            <p style="color: cadetblue">
+                @Html.ActionLink("Edit", "Edit", new { id = item.id_karta })
+                @Html.ActionLink("Details", "Details", new { id = item.id_karta })
+                @Html.ActionLink("Delete", "Delete", new { id = item.id_karta })
+
+            </p>
+
+        </td>
+    </tr>
+}
+
+</table>

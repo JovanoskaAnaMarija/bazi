@@ -1,0 +1,102 @@
+﻿@model BAZIPROEEKT.Models.Karta
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 style="color:burlywood">Детали</h2>
+
+<div>
+    <h4 style="color:cadetblue">Карта</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <p style="color:burlywood">
+                @Html.DisplayNameFor(model => model.datum_na_izdavanje)
+            </p>
+        </dt>
+
+        <dd>
+            <p style="color:cadetblue">
+                @Html.DisplayFor(model => model.datum_na_izdavanje)
+                </p>
+        </dd>
+
+        <dt>
+            <p style="color:burlywood">
+                @Html.DisplayNameFor(model => model.id_klient)
+                </p>
+        </dt>
+
+        <dd>
+            <p style="color:cadetblue">
+                @Html.DisplayFor(model => model.id_klient)
+                </p>
+        </dd>
+
+        <dt>
+            <p style="color:burlywood">
+                @Html.DisplayNameFor(model => model.id_let)
+                </p>
+        </dt>
+
+        <dd>
+            <p style="color:cadetblue">
+                @Html.DisplayFor(model => model.id_let)
+                </p>
+        </dd>
+
+        <dt>
+            <p style="color:burlywood">
+                @Html.DisplayNameFor(model => model.destinacija_od)
+                </p>
+        </dt>
+
+        <dd>
+            <p style="color:cadetblue">
+                @Html.DisplayFor(model => model.destinacija_od)
+                </p>
+        </dd>
+
+        <dt>
+            <p style="color:burlywood">
+                @Html.DisplayNameFor(model => model.destinacija_do)
+                </p>
+        </dt>
+
+        <dd>
+            <p style="color:cadetblue">
+                @Html.DisplayFor(model => model.destinacija_do)
+                </p>
+        </dd>
+
+        <dt>
+            <p style="color:burlywood">
+                @Html.DisplayNameFor(model => model.vreme_na_poaganje)
+                </p>
+        </dt>
+
+        <dd>
+            <p style="color:cadetblue">
+                @Html.DisplayFor(model => model.vreme_na_poaganje)
+                </p>
+        </dd>
+
+        <dt>
+            <p style="color:burlywood">
+                @Html.DisplayNameFor(model => model.cena)
+                </p>
+        </dt>
+
+        <dd>
+            <p style="color:cadetblue">
+                @Html.DisplayFor(model => model.cena)
+                </p>
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id_karta }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

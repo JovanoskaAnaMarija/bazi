@@ -1,0 +1,62 @@
+﻿@model IEnumerable<BAZIPROEEKT.Models.Rezervacija>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 style="color: burlywood;font-size:30px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">Резервации</h2>
+
+<p>
+    <button class="btn btn-info"> @Html.ActionLink("+Додади", "Create", new { style = "color:white" })</button>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <p style="color: burlywood">
+                @Html.DisplayNameFor(model => model.vreme_na_rezervacija)
+                </p>
+        </th>
+        <th>
+            <p style="color: burlywood">
+                @Html.DisplayNameFor(model => model.id_klient)
+                </p>
+        </th>
+        <th>
+            <p style="color: burlywood">
+                @Html.DisplayNameFor(model => model.id_avio)
+                </p>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <p style="color:  cadetblue">
+                @Html.DisplayFor(modelItem => item.vreme_na_rezervacija)
+                </p>
+        </td>
+        <td>
+            <p style="color:  cadetblue">
+                @Html.DisplayFor(modelItem => item.id_klient)
+           </p>
+        </td>
+        <td>
+            <p style="color:  cadetblue">
+                @Html.DisplayFor(modelItem => item.id_avio)
+                </p>
+        </td>
+        <td>
+
+            <p style="color: cadetblue">
+                @Html.ActionLink("Edit", "Edit", new { id = item.id_rezervacija})
+                @Html.ActionLink("Details", "Details", new { id = item.id_rezervacija })
+                @Html.ActionLink("Delete", "Delete", new { id = item.id_rezervacija })
+
+            </p>
+
+        </td>
+    </tr>
+}
+
+</table>

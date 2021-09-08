@@ -1,0 +1,70 @@
+﻿@model IEnumerable<BAZIPROEEKT.Models.Klient>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 style="color: burlywood;font-size:30px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">Клиенти</h2>
+
+<p>
+    <button class="btn btn-info"> @Html.ActionLink("+Додади", "Create", new { style = "color:white" })</button>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <p style="color: burlywood">
+                @Html.DisplayNameFor(model => model.ime)
+                </p>
+        </th>
+        <th>
+            <p style="color: burlywood">
+                @Html.DisplayNameFor(model => model.username)
+                </p>
+        </th>
+        <th>
+            <p style="color: burlywood">
+                @Html.DisplayNameFor(model => model.password)
+                </p>
+        </th>
+        <th>
+            <p style="color: burlywood">
+                @Html.DisplayNameFor(model => model.email)
+                </p>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <p style="color:  cadetblue">
+                @Html.DisplayFor(modelItem => item.ime)
+                </p>
+        </td>
+        <td>
+            <p style="color:  cadetblue">
+                @Html.DisplayFor(modelItem => item.username)
+                </p>
+        </td>
+        <td>
+            <p style="color:  cadetblue">
+                @Html.DisplayFor(modelItem => item.password)
+                </p>
+        </td>
+        <td>
+            <p style="color:  cadetblue">
+                @Html.DisplayFor(modelItem => item.email)
+                </p>
+        </td>
+        <td>
+            <p style="color: cadetblue">
+                @Html.ActionLink("Edit", "Edit", new { id = item.id_klient })
+                @Html.ActionLink("Details", "Details", new { id = item.id_klient })
+                @Html.ActionLink("Delete", "Delete", new { id = item.id_klient })
+
+            </p>
+        </td>
+    </tr>
+}
+
+</table>
